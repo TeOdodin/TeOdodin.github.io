@@ -1,0 +1,199 @@
+.ps-structure {
+    display: grid;
+    grid-template-columns: 2fr 6fr 3fr;
+    width: 100%;
+    height: 70vh;
+    min-height: 600px;
+    background-color: var(--theme-main-lighter);
+    color: white;
+}
+
+.ps-left-side {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    column-gap: 0.1rem;
+    padding-top: 0.5rem;
+    padding-right: 0.1rem;
+    background-color: var(--theme-main);
+}
+
+.ps-tools {
+    border: 0.5px solid var(--theme-main-darker);
+    border-width: 0.5px 0.5px 0 0.5px;
+    background-color: var(--theme-main-lighter);
+    background-image: url(pstools.png);
+    background-size: 100%;
+    background-position: 0 1rem;
+    background-repeat: no-repeat;
+}
+
+.ps-layers {
+    display: grid;
+    grid-template-rows: 2rem 1fr;
+}
+
+.ps-layers-title {
+    width: fit-content;
+    padding: 0.5rem;
+    border: 0.5px solid var(--theme-main-darker);
+    border-width: 0.5px 0.5px 0 0.5px;
+    background-color: var(--theme-main-lighter);
+    font-size: 1rem;
+    line-height: 1rem;
+}
+
+.ps-layers-menu {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1.5rem;
+    border: 0.5px solid var(--theme-main-darker);
+    border-width: 0 0.5px 0 0.5px;
+    background-color: var(--theme-main-lighter);
+}
+
+.ps-layers-menu>a {
+    padding: 1rem;
+    border: 1px solid var(--theme-main-darker);
+    background-color: var(--theme-main-lighter);
+    color: white;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.ps-layers-menu>a:hover {
+    background-color: rgb(120, 120, 120);
+}
+
+.ps-image-title {
+    width: fit-content;
+    padding: 0.5rem;
+    border: 0.5px solid var(--theme-main-darker);
+    background-color: var(--theme-main-lighter);
+    font-size: 0.9rem;
+    line-height: 0.9rem;
+}
+
+.ps-center {
+    display: grid;
+    grid-template-rows: 2rem 1fr;
+    background-color: var(--theme-main);
+}
+
+.ps-gallery {
+    display: flex;
+    align-items: center;
+    border: 0.5px solid var(--theme-main-darker);
+    background-color: var(--theme-main-darker);
+}
+
+.ps-gallery-image {
+    display: flex;
+    justify-content: center;
+    width: 95%;
+    height: calc(60vh - 5rem);
+    min-height: calc(600px - 5rem);
+}
+
+.ps-gallery-image>img {
+    max-width: 100%;
+    max-height: 100%;
+    background-color: white;
+}
+
+.ps-right-side {
+    display: grid;
+    grid-template-rows: 2rem 15rem 2rem 1fr;
+    padding-top: 0.5rem;
+    padding-left: 0.1rem;
+    background-color: var(--theme-main);
+}
+
+.ps-gallery-preview {
+    display: grid;
+    grid-template-rows: 10rem 3rem;
+    row-gap: 0.5rem;
+    justify-items: center;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    margin-bottom: 0.1rem;
+    border: 0.5px solid var(--theme-main-darker);
+    border-width: 0 0.5px 0.5px 0.5px;
+    background-color: var(--theme-main-lighter);
+}
+
+.ps-image-preview {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    height: 100%;
+}
+
+.ps-image-preview>img {
+    max-width: 100%;
+    max-height: 100%;
+    border: 2px solid red;
+    background-color: white;
+}
+
+.ps-gallery-list {
+    display: flex;
+    column-gap: 0.5rem;
+    width: 95%;
+    padding: 0.5rem;
+    border: 0.5px solid var(--theme-main-darker);
+    box-shadow: inset 0 0 10px rgb(0 0 0 / 50%);
+    overflow-x: auto;
+}
+
+.ps-gallery-list>.ps-gallery-element {
+    width: 0.7rem;
+    height: 0.7rem;
+    border: 0.5px solid var(--theme-main-darker);
+    border-radius: 0.3rem;
+    background-color: rgb(120, 120, 120);
+}
+
+.ps-gallery-list>.ps-gallery-element.selected {
+    background-color: rgb(180, 180, 180);
+}
+
+.ps-color-pick {
+    padding: 1rem;
+    border: 0.5px solid var(--theme-main-darker);
+    border-width: 0 0.5px 0 0.5px;
+    background-color: var(--theme-main-lighter);
+}
+
+.ps-color-spectrum {
+    width: 100%;
+    height: min(15rem, 100%);
+    border: 0.5px solid var(--theme-main-darker);
+    background-image: linear-gradient(to top, black, rgba(0, 0, 0, 0), white),
+        linear-gradient(to right,
+            hsl(0, 100%, 50%) 0%,
+            hsl(60, 100%, 50%) 16.67%,
+            hsl(120, 100%, 50%) 33.33%,
+            hsl(180, 100%, 50%) 50%,
+            hsl(240, 100%, 50%) 66.67%,
+            hsl(320, 100%, 50%) 83.33%,
+            hsl(360, 100%, 50%) 100%);
+}
+
+@media screen and (orientation: portrait) {
+    .ps-structure {
+        grid-template-columns: 2fr 6fr 2fr;
+        height: 40vh;
+        min-height: 400px;
+    }
+
+    .ps-gallery-image {
+        height: calc(40vh - 5rem);
+        min-height: calc(400px - 5rem);
+    }
+
+    .ps-gallery-list>.ps-gallery-element {
+        width: 1.1rem;
+        height: 1.1rem;
+        border-radius: 0.6rem;
+    }
+}

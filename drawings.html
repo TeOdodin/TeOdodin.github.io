@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <style>
+        :root {
+            --theme-main: rgb(40, 40, 40);
+            --theme-main-midop: rgb(40, 40, 40, 0.5);
+            --theme-main-lighter: rgb(83, 83, 83);
+            --theme-main-darker: rgb(15, 15, 15);
+            --theme-second: rgba(255, 245, 189);
+            --theme-second-7op: rgba(255, 245, 189, 0.7);
+            --theme-third: rgb(50, 20, 80);
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgb(15, 15, 15);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background: rgb(40, 40, 40);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(83, 83, 83);
+        }
+    </style>
+    <link href="style.css" rel="stylesheet" />
+    <link href="photoshop.css" rel="stylesheet" />
+    <script src="psGallery.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <aside>
+            <img src="logo.svg" />
+            <h2>Théo Daudin</h2>
+        </aside>
+        <nav class="pc">
+            <a href="index.html">About</a>
+            <a href="#">Event Planning</a>
+            <a href="#">IT</a>
+            <a href="#">Drawings</a>
+            <a href="#">Contacts</a>
+        </nav>
+        <nav class="mobile">
+            <button id="btn-burger-nav">
+                <span class="btn-burger-bar top-bar"></span>
+                <span class="btn-burger-bar middle-bar"></span>
+                <span class="btn-burger-bar bottom-bar"></span>
+            </button>
+            <div id="mobile-nav">
+                <a href="index.html">About</a>
+                <a href="#">Event Planning</a>
+                <a href="#">IT</a>
+                <a href="#">Drawings</a>
+                <a href="#">Contacts</a>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <div class="ps-structure">
+            <div class="ps-left-side">
+                <div class="ps-tools">
+                </div>
+                <div class="ps-layers">
+                    <span class="ps-layers-title">Summary</span>
+                    <div class="ps-layers-menu">
+                        <a href="#origin">Origine</a>
+                        <a href="#origin">Dessin digital</a>
+                        <a href="#origin">Design</a>
+                        <a href="#origin">Scraps</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ps-center">
+                <span id="ps-gallery-title" class="ps-image-title">title of image</span>
+                <div class="ps-gallery">
+                    <div class="ps-gallery-image">
+                        <img id="ps-gallery-image" src="portrait_01.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="ps-right-side">
+                <span class="ps-layers-title">Navigation</span>
+                <div class="ps-gallery-preview">
+                    <div class="ps-image-preview">
+                        <img id="ps-gallery-preview" src="portrait_01.png" />
+                    </div>
+                    <div id="ps-gallery-list" class="ps-gallery-list">
+                    </div>
+                </div>
+                <span class="ps-layers-title">Color</span>
+                <div class="ps-color-pick">
+                    <div class="ps-color-spectrum">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <article>
+            <h1>Théo DAUDIN</h1>
+            <p class="big-screen">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets con</p>
+            <p class="small-screen">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            </p>
+        </article>
+    </section>
+    <footer>
+    </footer>
+    <script defer>
+        const burgerBtn = document.querySelector("#btn-burger-nav");
+        let toggleBurgerNav = false;
+        burgerBtn.onclick = () => {
+            toggleBurgerNav = !toggleBurgerNav;
+            document.querySelector("#mobile-nav").style.display = toggleBurgerNav ? "grid" : "none";
+            burgerBtn.classList.toggle('nav-open');
+        }
+    </script>
+</body>
+
+</html>
