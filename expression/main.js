@@ -1,4 +1,4 @@
-(() => {
+(async () => {
     const resultDisplay = document.querySelector("body div.result > p");
     const container = document.querySelector("body div.container");
     const selectedPath = [];
