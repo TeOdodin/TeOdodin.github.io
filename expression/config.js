@@ -49,4 +49,6 @@ const CHOICES = [
             }
         ]
     }
-]
+];
+
+document.querySelector('body').append("TEST LOG 1")
