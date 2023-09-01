@@ -33,6 +33,67 @@ const CHOICES = [
                 icon: "fa-solid fa-gear",
                 color: "brown",
                 textDisplay: "Comment",
+                choices: [
+                    {
+                        name: "Je",
+                        icon: "fa-solid fa-image-portrait",
+                        color: "orange",
+                        textDisplay: "est-ce que je",
+                    },
+                    {
+                        name: "Tu",
+                        icon: "fa-solid fa-image-portrait",
+                        color: "orange",
+                        textDisplay: "est-ce que tu",
+                    },
+                    {
+                        name: "Vous",
+                        icon: "fa-solid fa-image-portrait",
+                        color: "orange",
+                        textDisplay: "est-ce que vous",
+                    },
+                    {
+                        name: "Les amis",
+                        icon: "fa-solid fa-image-portrait",
+                        color: "orange",
+                        choices: [
+                            {
+                                name: "Sabrina et Didier",
+                                icon: "fa-solid fa-image-portrait",
+                                color: "orange",
+                                textDisplay: "est-ce que Sabrina et Didier",
+                            },
+                        ],
+                    },
+                    {
+                        name: "Mes parents",
+                        icon: "fa-solid fa-image-portrait",
+                        color: "orange",
+                        choices: [
+                            {
+                                name: "Mamie (Marie-Thérèse)",
+                                icon: "fa-solid fa-image-portrait",
+                                color: "orange",
+                                textDisplay: "est-ce que Mamie",
+                                choices: [
+                                    {
+                                        name: "Va (Santé, Etat)",
+                                        icon: "fa-solid fa-image-portrait",
+                                        color: "orange",
+                                        textDisplay: "se porte ?",
+                                        end: true
+                                    },
+                                ],
+                            },
+                            {
+                                name: "Papi (Gaston)",
+                                icon: "fa-solid fa-image-portrait",
+                                color: "orange",
+                                textDisplay: "est-ce que Mamie",
+                            },
+                        ],
+                    },
+                ],
             },
         ],
     },

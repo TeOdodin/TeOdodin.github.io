@@ -19,14 +19,18 @@ div.result {
     width: 100%;
     padding: 1.5rem 0;
     border-bottom: 2px black solid;
-    font-size: 2.5rem;
+    font-size: 3rem;
+}
+
+div.result>p {
+    margin: 0;
 }
 
 div.container {
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
-    min-width: 500px;
+    min-width: 50rem;
     max-width: 100vw;
     padding: 1.5rem;
 }
@@ -37,7 +41,7 @@ button.choice {
     border-radius: 1.5rem;
     background: white;
     border: 2px black solid;
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     text-align: left;
 }
 
@@ -49,4 +53,8 @@ button.choice:hover {
 
 button.choice>.icon {
     margin-right: 1rem;
+}
+
+button.choice>.details {
+    font-size: 3.25rem;
 }

@@ -1,6 +1,7 @@
 (async () => {
     const resultDisplay = document.querySelector("body div.result > p");
     const container = document.querySelector("body div.container");
+    const synth = window.speechSynthesis;
     const selectedPath = [];
 
     function generateChoiceButton(choice) {
@@ -12,7 +13,10 @@
         if (choice.icon) icon.classList.add(...choice.icon.split(" "));
         if (choice.color) icon.style.color = choice.color;
         button.appendChild(icon);
-        button.append(choice.name);
+        button.innerHTML += choice.name.replace(
+            /(\(.+\))/gi,
+            '<span class="details">$1</span>'
+        );
         return button;
     }
 
@@ -27,12 +31,18 @@
         container.innerHTML = "";
     }
 
+    function readText() {
+        const utterThis = new SpeechSynthesisUtterance(resultDisplay.innerText);
+        synth.speak(utterThis);
+    }
+
     function choiceButtonClicked(choice) {
         selectedPath.push(choice);
         updateSelectedPath();
         if (choice.choices) {
             displayCurrentChoices(choice.choices);
         } else {
+            if (choice.end) readText();
             displayReset();
         }
     }
