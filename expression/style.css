@@ -1,0 +1,52 @@
+@font-face {
+    font-family: Nunito;
+    src: url(assets/nunito/static/Nunito-Regular.ttf);
+}
+
+body {
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Nunito, sans-serif;
+}
+
+div.result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1.5rem 0;
+    border-bottom: 2px black solid;
+    font-size: 1.5rem;
+}
+
+div.container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    min-width: 500px;
+    max-width: 100vw;
+    padding: 1.5rem;
+}
+
+button.choice {
+    width: calc(100% - 2rem);
+    padding: 1.5rem 1rem;
+    border-radius: 1.5rem;
+    background: white;
+    border: 2px black solid;
+    font-size: 2rem;
+    text-align: left;
+}
+
+button.choice:hover {
+    background: rgb(235, 235, 235);
+    border-color: rgb(215, 215, 215);
+    cursor: pointer;
+}
+
+button.choice>.icon {
+    margin-right: 1rem;
+}
