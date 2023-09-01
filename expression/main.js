@@ -47,7 +47,4 @@
     }
 
     displayCurrentChoices(CHOICES);
-
-    document.querySelector('body').append("TEST LOG 3")
 })();
-document.querySelector('body').append("TEST LOG 2")

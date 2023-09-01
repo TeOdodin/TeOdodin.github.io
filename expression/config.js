@@ -8,33 +8,33 @@ const CHOICES = [
                 name: "Qui",
                 icon: "fa-solid fa-person-circle-question",
                 color: "blue",
-                textDisplay: "Qui"
+                textDisplay: "Qui",
             },
             {
                 name: "Quoi",
                 icon: "fa-solid fa-circle-question",
                 color: "orange",
-                textDisplay: "Quoi"
+                textDisplay: "Quoi",
             },
             {
                 name: "Quand",
                 icon: "fa-solid fa-hourglass-start",
                 color: "green",
-                textDisplay: "Quand"
+                textDisplay: "Quand",
             },
             {
                 name: "Où",
                 icon: "fa-solid fa-location-dot",
                 color: "red",
-                textDisplay: "Où"
+                textDisplay: "Où",
             },
             {
                 name: "Comment",
                 icon: "fa-solid fa-gear",
                 color: "brown",
-                textDisplay: "Comment"
-            }
-        ]
+                textDisplay: "Comment",
+            },
+        ],
     },
     {
         name: "Affirmation",
@@ -45,10 +45,8 @@ const CHOICES = [
                 name: "Je",
                 icon: "fa-solid fa-image-portrait",
                 color: "orange",
-                textDisplay: "Je"
-            }
-        ]
-    }
+                textDisplay: "Je",
+            },
+        ],
+    },
 ];
-
-document.querySelector('body').append("TEST LOG 1")

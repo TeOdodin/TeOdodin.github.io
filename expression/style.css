@@ -19,7 +19,7 @@ div.result {
     width: 100%;
     padding: 1.5rem 0;
     border-bottom: 2px black solid;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
 }
 
 div.container {
@@ -37,7 +37,7 @@ button.choice {
     border-radius: 1.5rem;
     background: white;
     border: 2px black solid;
-    font-size: 2rem;
+    font-size: 3.5rem;
     text-align: left;
 }
 
