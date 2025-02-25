@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated HUD Circle</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #26e6db;
+            margin: 0;
+        }
+
+        .hud-container {
+            position: relative;
+            width: 250px;
+            height: 250px;
+        }
+
+/* Outer circle */
+.outer-circle {
+    position: absolute;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    border-radius: 50%;
+    border: 6px solid rgba(255, 255, 255, 0.7);
+}
+
+/* Dashed rotating ring */
+.outer-dashed-ring {
+    position: absolute;
+    width: calc(90% - 24px);
+    height: calc(90% - 24px);
+    border-radius: 50%;
+    border: 12px dashed white;
+    border-style: dashed solid;
+    top: 5%;
+    left: 5%;
+    transition: transform 0.5s ease;
+}
+
+/* Outer circle */
+.inner-circle {
+    position: absolute;
+    width: calc(70% - 8px);
+    height: calc(70% - 8px);
+    border-radius: 50%;
+    top: 15%;
+    left: 15%;
+    border: 4px solid rgba(255, 255, 255, 0.7);
+}
+
+/* Dashed rotating ring */
+.inner-dashed-ring {
+    position: absolute;
+    width: calc(60% - 12px);
+    height: calc(60% - 12px);
+    border-radius: 50%;
+    border: 6px dashed white;
+    top: 20%;
+    left: 20%;
+    transition: transform 0.5s ease;
+}
+
+        /* Inner glowing effect */
+        .inner-glow {
+            position: absolute;
+            width: 70%;
+            height: 70%;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0));
+            top: 15%;
+            left: 15%;
+        }
+
+/* Hover animation */
+.hud-container:hover .outer-dashed-ring {
+    transform: rotate(70deg);
+}
+
+/* Hover animation */
+.hud-container:hover .inner-dashed-ring {
+    transform: rotate(200deg);
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="hud-container">
+        <div class="outer-circle"></div>
+        <div class="outer-dashed-ring"></div>
+        <div class="inner-glow"></div>
+        <div class="inner-circle"></div>
+        <div class="inner-dashed-ring"></div>
+    </div>
+
+</body>
+</html>

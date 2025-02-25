@@ -1,0 +1,73 @@
+.hud-container {
+  position: relative;
+}
+
+/* Outer circle */
+.outer-circle {
+  position: absolute;
+  width: calc(100% - 3em);
+  height: calc(100% - 3em);
+  border-radius: 50%;
+  border: 1.5em solid var(--main-color);
+}
+
+/* Dashed rotating ring */
+.outer-dashed-ring {
+  position: absolute;
+  width: calc(90% - 6em);
+  height: calc(90% - 6em);
+  border-radius: 50%;
+  border: 3em dashed var(--main-color);
+  border-style: dashed solid;
+  top: 5%;
+  left: 5%;
+  transition: transform 0.5s ease;
+}
+
+/* Outer circle */
+.inner-circle {
+  position: absolute;
+  width: calc(70% - 2em);
+  height: calc(70% - 2em);
+  border-radius: 50%;
+  top: 15%;
+  left: 15%;
+  border: 1em solid var(--secondary-color);
+}
+
+/* Dashed rotating ring */
+.inner-dashed-ring {
+  position: absolute;
+  width: calc(60% - 3em);
+  height: calc(60% - 3em);
+  border-radius: 50%;
+  border: 1.5em dashed var(--secondary-color);
+  top: 20%;
+  left: 20%;
+  transition: transform 0.5s ease;
+}
+
+/* Inner glowing effect */
+.inner-glow {
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.2),
+    rgba(0, 0, 0, 0)
+  );
+  top: 15%;
+  left: 15%;
+}
+
+/* Hover animation */
+.hud-container-parent:hover .outer-dashed-ring {
+  transform: rotate(70deg);
+}
+
+/* Hover animation */
+.hud-container-parent:hover .inner-dashed-ring {
+  transform: rotate(200deg);
+}
