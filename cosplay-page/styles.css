@@ -41,6 +41,7 @@ header {
   position: relative;
   width: 100%;
   height: 80vh;
+  min-height: 650px;
   background-image: url(header_bg.jpg);
   background-size: cover;
   background-position: center top;
@@ -52,7 +53,7 @@ header > div.display {
   align-content: center;
   position: absolute;
   top: 13vw;
-  left: 49%;
+  left: 50%;
   width: 25%;
   height: 17vw;
   background: linear-gradient(
@@ -64,6 +65,22 @@ header > div.display {
     rgba(170, 166, 157, 0.5) 90%
   );
   transform: translate(-50%);
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: fit-content;
+  min-height: 1.5rem;
+  background-color: #222;
+  color: white;
+  font-size: 0.9rem;
+  z-index: 12;
 }
 
 nav {
@@ -135,7 +152,7 @@ section.wrapper {
   background-color: #f1f1f1;
   width: min(max(60%, 50rem), calc(100% - 4rem));
   min-height: 30vh;
-  padding: 10rem 2rem 20rem 2rem;
+  padding: 10rem 2rem 10rem 2rem;
   box-shadow: 0 3rem 2rem var(--text-color);
 }
 
@@ -165,6 +182,7 @@ article::after {
   left: 0;
   width: 100%;
   height: 3rem;
+  margin-top: 1rem;
   background-image: url(assets/images/bottom_border.svg);
   background-size: contain;
   background-position: center;
@@ -175,11 +193,17 @@ article::after {
 
 article > .row {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 
-article p, article li {
+article p,
+article li {
   text-align: justify;
+}
+
+article ul {
+  margin: 0;
 }
 
 article li li li {
@@ -197,6 +221,7 @@ article img.vertical {
 
 article img.large {
   width: 97%;
+  max-width: 48rem;
 }
 
 article img.forbid {
@@ -271,10 +296,43 @@ a.primary-btn {
   filter: drop-shadow(0.25rem 0.5rem 2px var(--main-color));
 }
 
-@media (max-width: 1150px) {
+#mentions_legales_btn {
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-family: "Nunito Sans", sans-serif;
+  text-decoration: underline;
+  cursor: pointer;
+} 
+
+#mentions_legales {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #222b;
+  z-index: 11;
+} 
+
+#mentions_legales .content {
+  position: fixed;
+  top: 5vh;
+  left: 50%;
+  width: min(max(60%, 50rem), calc(100% - 4rem));
+  height: 85vh;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #eee;
+  overflow-y: auto;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 1150px) and (max-aspect-ratio: 5/4) {
   header > div.display {
     top: 20%;
-    left: 48.75%;
+    left: 49.75%;
     width: 30vh;
     height: 20vh;
   }
@@ -293,9 +351,14 @@ a.primary-btn {
 
   header > div.display {
     top: 24%;
-    left: 47.5%;
+    left: 49%;
     width: 35vh;
     height: 23vh;
+  }
+
+  footer {
+    top: 0;
+    bottom: auto;
   }
 
   nav {
@@ -328,6 +391,7 @@ a.primary-btn {
   }
 
   section.wrapper {
+    gap: 8rem;
     padding: 6.5rem 2rem 20rem 2rem;
   }
 
@@ -343,5 +407,13 @@ a.primary-btn {
     max-height: 70vh;
     object-fit: contain;
     object-position: center;
+  }
+}
+
+/* MOZILLA SPECIFIC */
+
+@media (min-aspect-ratio: 4/5) {
+  article div.row div.content {
+    width: calc(60% - 2rem) !important;
   }
 }
